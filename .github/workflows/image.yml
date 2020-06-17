@@ -20,7 +20,7 @@ jobs:
           echo "##[set-output name=releaseName;]$(if [ "${GITHUB_REF##*/}" = "master" ]; then echo "latest"; else echo "${GITHUB_REF##*/}"; fi)"
           DOCKER_PLATFORMS=linux/arm64,linux/amd64
           echo ::set-output name=buildx_args::--platform ${DOCKER_PLATFORMS} \
-            --output "type=image,push=true"
+            --output "type=image,push=true" \
             --build-arg VERSION="19.20"
       
       - name: Set up Docker Buildx
