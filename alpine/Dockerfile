@@ -42,9 +42,9 @@ RUN echo "Dlib: ${DLIB_VERSION}" \
 
 FROM dlib_builder
 
-ARG version=1.14.4
+ARG golang_version=1.14.4
 
-COPY --from=golang:${version}-alpine /usr/local/go /usr/local/go
+COPY --from=golang:${golang_version}-alpine /usr/local/go /usr/local/go
 
 ENV GOPATH=/go PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
