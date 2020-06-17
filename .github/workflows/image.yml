@@ -22,6 +22,7 @@ jobs:
           echo ::set-output name=buildx_args::--platform ${DOCKER_PLATFORMS} \
             --output "type=image,push=true" \
             --build-arg VERSION="19.20"
+        id: args
       
       - name: Set up Docker Buildx
         id: buildx
